@@ -189,8 +189,8 @@
                 <span class="days-left" id="days-left-label"></span>
             </div>
             <div class="subtabs">
-                <button class="subtab active" onclick="setSubtab('goals')">Goals</button>
-                <button class="subtab" onclick="setSubtab('history')">History</button>
+                <button class="subtab active" onclick="setSubtab('goals',this)">Goals</button>
+                <button class="subtab" onclick="setSubtab('history',this)">History</button>
             </div>
             <div id="goals-subpage">
                 <div id="goals-list"></div>
@@ -233,6 +233,7 @@
             if(page==="metrics")renderMetrics();
             if(page==="tasks")renderTasks();
             if(page==="logs")renderLogs();
+            localStorage.setItem('last_tab',page);
         });
 
         var CATS={
@@ -284,6 +285,7 @@
           document.getElementById('logs-today').style.display=tab==='today'?'block':'none';
           document.getElementById('logs-history').style.display=tab==='history'?'block':'none';
           if(tab==='history')renderLogsHistory();
+          localStorage.setItem('last_logs_subtab',tab);
         }
         function buildLogGraph(){
           var now=new Date(),y=now.getFullYear(),m=now.getMonth();
@@ -486,12 +488,14 @@
             document.getElementById("days-left-label").textContent=dl+(dl===1?" day left":" days left");
         }
 
-        function setSubtab(tab){
-            document.querySelectorAll(".subtab").forEach(function(b){b.classList.remove("active");});
-            event.target.classList.add("active");
+        function setSubtab(tab,btn){
+            btn=btn||(typeof event!=="undefined"?event.target:null);
+            document.querySelectorAll("#page-goals .subtab").forEach(function(b){b.classList.remove("active");});
+            if(btn)btn.classList.add("active");
             document.getElementById("goals-subpage").style.display=tab==="goals"?"block":"none";
             document.getElementById("history-subpage").style.display=tab==="history"?"block":"none";
             if(tab==="history")renderHistory();
+            localStorage.setItem('last_goals_subtab',tab);
         }
 
         function toggle(id){
@@ -934,6 +938,38 @@ function showJournalForm(){
 
         renderGoals();
         renderMetrics();
+        // Restore last active tab/subtab
+        (function(){
+          var tab=localStorage.getItem('last_tab')||'goals';
+          if(tab!=='goals'){
+            var tBtn=document.querySelector('.nav-tab[data-page="'+tab+'"]');
+            if(tBtn){
+              document.querySelectorAll('.page').forEach(function(p){p.classList.remove('active');});
+              document.querySelectorAll('.nav-tab').forEach(function(t){t.classList.remove('active');});
+              document.getElementById('page-'+tab).classList.add('active');
+              tBtn.classList.add('active');
+              if(tab==='metrics')renderMetrics();
+              if(tab==='tasks')renderTasks();
+              if(tab==='logs')renderLogs();
+            }
+          }
+          if(tab==='goals'){
+            var gSub=localStorage.getItem('last_goals_subtab')||'goals';
+            if(gSub==='history'){
+              var hBtn=document.querySelector('#page-goals .subtab:nth-child(2)');
+              if(hBtn)setSubtab('history',hBtn);
+            }
+          }
+          if(tab==='logs'){
+            var lSub=localStorage.getItem('last_logs_subtab')||'today';
+            if(lSub==='history'){
+              setTimeout(function(){
+                var lBtn=document.querySelector('#logs-subtabs .subtab:nth-child(2)');
+                if(lBtn)setLogsTab('history',lBtn);
+              },0);
+            }
+          }
+        })();
     </script>
 </body>
 </html>
