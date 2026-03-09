@@ -40,7 +40,7 @@
         .goal-bar-fill{position:absolute;left:0;top:0;bottom:0;border-radius:20px;transition:width 0.7s cubic-bezier(0.4,0,0.2,1);}
         .goal-bar-inner{position:absolute;inset:0;display:flex;align-items:center;justify-content:space-between;padding:0 18px 0 16px;}
         .goal-bar-left{display:flex;align-items:center;gap:11px;}
-        .goal-bar-emoji{flex-shrink:0;display:flex;align-items:center;justify-content:center;filter:drop-shadow(0 1px 2px rgba(0,0,0,0.15));}.goal-bar-emoji svg{width:28px;height:28px;display:block;}.history-goal-name svg{width:15px;height:15px;vertical-align:middle;margin-right:3px;}
+        .goal-bar-emoji{flex-shrink:0;display:flex;align-items:center;justify-content:center;color:#ffffff;filter:drop-shadow(0 1px 2px rgba(0,0,0,0.15));}.goal-bar-emoji svg{width:28px;height:28px;display:block;}.history-goal-name svg{width:15px;height:15px;vertical-align:middle;margin-right:3px;}
         .goal-bar-title{font-size:15px;font-weight:700;color:#f0f0f0;line-height:1.25;max-width:180px;}
         .goal-bar-time{font-size:11px;color:rgba(255,255,255,0.35);margin-top:2px;font-weight:500;}
         .goal-bar-right{text-align:right;flex-shrink:0;}
@@ -76,7 +76,7 @@
         .empty{text-align:center;padding:48px 0;color:#8ab5ae;font-size:15px;font-weight:500;}
 
         /* History */
-        .history-card{background:#1c2135;border-radius:16px;border:1.5px solid #232b42;padding:16px 18px;margin-bottom:10px;box-shadow:0 2px 6px rgba(0,0,0,0.05);}
+        .history-card{background:#1c2135;border-radius:16px;border:1.5px solid #252d45;padding:16px 18px;margin-bottom:10px;box-shadow:0 2px 6px rgba(0,0,0,0.05);}
         .history-card-header{display:flex;align-items:center;gap:10px;cursor:pointer;user-select:none;}
         .history-card-name{font-size:14px;font-weight:700;color:#ffffff;min-width:120px;}
         .history-bar-wrap{flex:1;height:8px;background:#e8e8e3;border-radius:4px;overflow:hidden;}
@@ -108,7 +108,7 @@
         .bar-bg{flex:1;height:8px;border-radius:4px;background:#e8f5f0;overflow:hidden;}
         .bar-fill{height:100%;border-radius:4px;background:linear-gradient(90deg,#2d7a6b,#4db6a4);transition:width 0.6s ease;}
         .bar-pct{font-size:11px;font-weight:600;color:#4a7c75;width:32px;text-align:right;flex-shrink:0;}
-        .cat-stat-row{display:flex;align-items:center;justify-content:space-between;padding:10px 0;border-bottom:1px solid #232b42;}
+        .cat-stat-row{display:flex;align-items:center;justify-content:space-between;padding:10px 0;border-bottom:1px solid #252d45;}
         .cat-stat-row:last-child{border-bottom:none;}
         .cat-stat-name{font-size:13px;font-weight:600;color:#b0bcd8;}
         .cat-stat-pct{font-size:13px;font-weight:700;color:#4ade80;}
@@ -120,7 +120,7 @@
 
                 /* Logs */
         .log-rating-row{display:flex;gap:5px;margin:8px 0 14px;}
-        .log-rating-btn{flex:1;padding:8px 4px;border-radius:10px;border:1.5px solid #232b42;background:#1c2135;font-size:20px;cursor:pointer;font-family:'Inter',sans-serif;transition:all 0.2s;text-align:center;line-height:1.4;}
+        .log-rating-btn{flex:1;padding:8px 4px;border-radius:10px;border:1.5px solid #252d45;background:#1c2135;font-size:20px;cursor:pointer;font-family:'Inter',sans-serif;transition:all 0.2s;text-align:center;line-height:1.4;}
         .log-rating-btn.sel{border-color:#4ade80;background:#eef6f3;transform:scale(1.08);box-shadow:0 2px 8px rgba(45,122,107,0.15);}
         .log-entry-card{background:#1c2135;border-radius:16px;border:1.5px solid #2a3350;padding:16px 18px;margin-bottom:10px;box-shadow:0 2px 8px rgba(45,122,107,0.05);}
         .log-entry-top{display:flex;align-items:center;justify-content:space-between;margin-bottom:6px;}
@@ -134,7 +134,7 @@
         .log-entry-text{font-size:15px;color:#b0bcd8;line-height:1.6;}
         .log-graph-wrap{background:#1c2135;border-radius:16px;border:1.5px solid #2a3350;padding:16px;margin-bottom:16px;box-shadow:0 2px 8px rgba(45,122,107,0.06);}
         .log-graph-title{font-size:11px;font-weight:700;letter-spacing:0.8px;text-transform:uppercase;color:#7ab5ac;margin-bottom:8px;}
-        .log-month-card{background:#1c2135;border-radius:16px;border:1.5px solid #232b42;padding:0;margin-bottom:10px;box-shadow:0 2px 6px rgba(0,0,0,0.05);overflow:hidden;}
+        .log-month-card{background:#1c2135;border-radius:16px;border:1.5px solid #252d45;padding:0;margin-bottom:10px;box-shadow:0 2px 6px rgba(0,0,0,0.05);overflow:hidden;}
         .log-month-hdr{display:flex;align-items:center;gap:8px;padding:14px 16px;cursor:pointer;user-select:none;}
         .log-month-nm{font-size:14px;font-weight:700;color:#ffffff;flex:1;}
         .log-month-cnt{font-size:12px;color:#aaa;font-weight:500;}
@@ -829,9 +829,9 @@ while(true){var dsc=checkD.getFullYear()+'-'+padNum(checkD.getMonth()+1)+'-'+pad
 var statLbl1='Completed';
 var statLbl2=metricsRange===7?'Total Done':'Days Achieved';
 var statsHtml='<div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:8px;margin-top:14px;">'
-+'<div style="background:white;border-radius:14px;padding:14px 8px;text-align:center;border:1.5px solid #2a3350;"><div style="font-size:22px;font-weight:800;color:#e74c3c;line-height:1;">'+avgPct+'%</div><div style="font-size:10px;color:#aaa;font-weight:600;margin-top:4px;">'+statLbl1+'</div></div>'
-+'<div style="background:white;border-radius:14px;padding:14px 8px;text-align:center;border:1.5px solid #2a3350;"><div style="font-size:22px;font-weight:800;color:#27ae60;line-height:1;">'+totalDone+'</div><div style="font-size:10px;color:#aaa;font-weight:600;margin-top:4px;">'+statLbl2+'</div></div>'
-+'<div style="background:white;border-radius:14px;padding:14px 8px;text-align:center;border:1.5px solid #2a3350;"><div style="font-size:22px;font-weight:800;color:#f39c12;line-height:1;">&#128293;'+streak+'<span style="font-size:11px">d</span></div><div style="font-size:10px;color:#aaa;font-weight:600;margin-top:4px;">Streak</div></div>'
++'<div style="background:#252d45;border-radius:14px;padding:14px 8px;text-align:center;border:1.5px solid #2a3350;"><div style="font-size:22px;font-weight:800;color:#e74c3c;line-height:1;">'+avgPct+'%</div><div style="font-size:10px;color:#aaa;font-weight:600;margin-top:4px;">'+statLbl1+'</div></div>'
++'<div style="background:#252d45;border-radius:14px;padding:14px 8px;text-align:center;border:1.5px solid #2a3350;"><div style="font-size:22px;font-weight:800;color:#27ae60;line-height:1;">'+totalDone+'</div><div style="font-size:10px;color:#aaa;font-weight:600;margin-top:4px;">'+statLbl2+'</div></div>'
++'<div style="background:#252d45;border-radius:14px;padding:14px 8px;text-align:center;border:1.5px solid #2a3350;"><div style="font-size:22px;font-weight:800;color:#f39c12;line-height:1;">&#128293;'+streak+'<span style="font-size:11px">d</span></div><div style="font-size:10px;color:#aaa;font-weight:600;margin-top:4px;">Streak</div></div>'
 +'</div>';
 var gridHtml='';
 if(metricsRange===7){
@@ -845,7 +845,7 @@ var hdr='<div style="display:flex;align-items:center;padding-bottom:8px;border-b
 +'</div>';
 var rows=goals.map(function(g){
 var cat=CATS[g.category];var weekDone=0;
-var dots=days.map(function(d){var done=completions[d]&&completions[d].indexOf(g.id)!==-1;if(done)weekDone++;return '<div style="width:26px;height:26px;border-radius:8px;flex-shrink:0;background:'+(done?cat.color:'#e8e8e3')+';'+(done?'box-shadow:0 2px 5px '+cat.color+'44;':'')+'"></div>';}).join('');
+var dots=days.map(function(d){var done=completions[d]&&completions[d].indexOf(g.id)!==-1;if(done)weekDone++;return '<div style="width:26px;height:26px;border-radius:8px;flex-shrink:0;background:'+(done?cat.color:'#252d45')+';'+(done?'box-shadow:0 2px 5px '+cat.color+'44;':'')+'"></div>';}).join('');
 var starCol=weekDone===7?'#FFD700':'#e0e0e0';
 return '<div style="display:flex;align-items:center;padding:6px 0;border-bottom:1px solid #f7f7f2;">'
 +'<div style="flex:1;min-width:0;font-size:12px;font-weight:600;color:#333;display:flex;align-items:center;gap:5px;">'
@@ -856,7 +856,7 @@ return '<div style="display:flex;align-items:center;padding:6px 0;border-bottom:
 +'<div style="width:30px;text-align:center;font-size:18px;color:'+starCol+';flex-shrink:0;padding-left:4px;line-height:1;">&#9733;</div>'
 +'</div>';
 }).join('');
-gridHtml='<div style="background:white;border-radius:18px;padding:16px 14px;box-shadow:0 2px 8px rgba(45,122,107,0.06);border:1.5px solid #2a3350;overflow:hidden;">'+hdr+rows+'</div>';
+gridHtml='<div style="background:#1c2135;border-radius:18px;padding:16px 14px;box-shadow:0 2px 8px rgba(45,122,107,0.06);border:1.5px solid #2a3350;overflow:hidden;">'+hdr+rows+'</div>';
 }else{
 var monthSet={};
 Object.keys(completions).forEach(function(date){if(completions[date]&&completions[date].length)monthSet[date.slice(0,7)]=true;});
