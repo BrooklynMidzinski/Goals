@@ -17,7 +17,7 @@
         .nav-tabs{display:flex;max-width:480px;margin:0 auto;}
         .nav-tab{flex:1;padding:12px 0 10px;text-align:center;font-size:12px;font-weight:600;color:#7ab5ac;cursor:pointer;border-bottom:2px solid transparent;transition:all 0.2s;font-family:'Inter',sans-serif;background:none;border-top:none;border-left:none;border-right:none;}
         .nav-tab.active{color:#2d7a6b;border-bottom-color:#2d7a6b;}
-        .tab-icon{display:block;font-size:20px;margin-bottom:3px;}
+        .tab-icon{display:flex;align-items:center;justify-content:center;height:24px;margin-bottom:3px;}
         .tab-label{display:block;}
         .container{max-width:480px;margin:0 auto;padding:0 18px;}
         .page{display:none;padding-top:18px;}
@@ -40,7 +40,7 @@
         .goal-bar-fill{position:absolute;left:0;top:0;bottom:0;border-radius:20px;transition:width 0.7s cubic-bezier(0.4,0,0.2,1);}
         .goal-bar-inner{position:absolute;inset:0;display:flex;align-items:center;justify-content:space-between;padding:0 18px 0 16px;}
         .goal-bar-left{display:flex;align-items:center;gap:11px;}
-        .goal-bar-emoji{font-size:28px;line-height:1;flex-shrink:0;filter:drop-shadow(0 1px 2px rgba(0,0,0,0.15));}
+        .goal-bar-emoji{flex-shrink:0;display:flex;align-items:center;justify-content:center;filter:drop-shadow(0 1px 2px rgba(0,0,0,0.15));}.goal-bar-emoji svg{width:28px;height:28px;display:block;}.history-goal-name svg{width:15px;height:15px;vertical-align:middle;margin-right:3px;}
         .goal-bar-title{font-size:15px;font-weight:700;color:#1a1a1a;line-height:1.25;max-width:180px;}
         .goal-bar-time{font-size:11px;color:rgba(0,0,0,0.4);margin-top:2px;font-weight:500;}
         .goal-bar-right{text-align:right;flex-shrink:0;}
@@ -177,9 +177,9 @@
     </div>
     <div class="nav-bar">
         <div class="nav-tabs" id="nav-tabs">
-            <button class="nav-tab active" data-page="goals"><span class="tab-icon">&#10022;</span><span class="tab-label">Goals</span></button>
-            <button class="nav-tab" data-page="tasks"><span class="tab-icon">&#9745;</span><span class="tab-label">Tasks</span></button><button class="nav-tab" data-page="metrics"><span class="tab-icon">&#128202;</span><span class="tab-label">Metrics</span></button>
-            <button class="nav-tab" data-page="logs"><span class="tab-icon">&#128221;</span><span class="tab-label">Logs</span></button>
+            <button class="nav-tab active" data-page="goals"><span class="tab-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="6"/><circle cx="12" cy="12" r="2"/></svg></span><span class="tab-label">Goals</span></button>
+            <button class="nav-tab" data-page="tasks"><span class="tab-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 11 12 14 22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></svg></span><span class="tab-label">Tasks</span></button><button class="nav-tab" data-page="metrics"><span class="tab-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="23 6 13.5 15.5 8.5 10.5 1 18"/><polyline points="17 6 23 6 23 12"/></svg></span><span class="tab-label">Metrics</span></button>
+            <button class="nav-tab" data-page="logs"><span class="tab-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 20h9"/><path d="M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4L16.5 3.5z"/></svg></span><span class="tab-label">Logs</span></button>
         </div>
     </div>
     <div class="container">
@@ -237,10 +237,10 @@
         });
 
         var CATS={
-            "Health & Fitness":{icon:"&#127939;",color:"#FF6B6B"},
-            "Habits & Daily Routines":{icon:"&#127749;",color:"#FFBE76"},
-            "Work & Productivity":{icon:"&#128188;",color:"#74B9FF"},
-            "Personal Growth":{icon:"&#127807;",color:"#55EFC4"}
+            "Health & Fitness":{icon:"<svg width='24' height='24' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'><path d='M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z'/></svg>",color:"#FF6B6B"},
+            "Habits & Daily Routines":{icon:"<svg width='24' height='24' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'><circle cx='12' cy='12' r='5'/><line x1='12' y1='1' x2='12' y2='3'/><line x1='12' y1='21' x2='12' y2='23'/><line x1='4.22' y1='4.22' x2='5.64' y2='5.64'/><line x1='18.36' y1='18.36' x2='19.78' y2='19.78'/><line x1='1' y1='12' x2='3' y2='12'/><line x1='21' y1='12' x2='23' y2='12'/><line x1='4.22' y1='19.78' x2='5.64' y2='18.36'/><line x1='18.36' y1='5.64' x2='19.78' y2='4.22'/></svg>",color:"#FFBE76"},
+            "Work & Productivity":{icon:"<svg width='24' height='24' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'><rect x='2' y='7' width='20' height='14' rx='2' ry='2'/><path d='M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16'/></svg>",color:"#74B9FF"},
+            "Personal Growth":{icon:"<svg width='24' height='24' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'><path d='M12 22V12'/><path d='M12 12C12 7 8 4.5 3 5c0 5 3 9 9 7'/><path d='M12 12c0-5 4-7.5 9-7 0 5-3 9-9 7'/></svg>",color:"#55EFC4"}
         };
 
         var goals=JSON.parse(localStorage.getItem("goals_v1")||"null")||[
