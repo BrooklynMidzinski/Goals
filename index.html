@@ -827,7 +827,7 @@ avgPct=totalDaysCount>0?Math.round(above70Count/totalDaysCount*100):0;
 var checkD=new Date();
 while(true){var dsc=checkD.getFullYear()+'-'+padNum(checkD.getMonth()+1)+'-'+padNum(checkD.getDate());var dcc=completions[dsc]?completions[dsc].length:0;if(goals.length>0&&dcc===goals.length){streak++;checkD.setDate(checkD.getDate()-1);}else break;}
 var statLbl1=metricsRange===7?'% Met':'Days 70%+';
-var statLbl2=metricsRange===7?'Total Done':'Colored Days';
+var statLbl2=metricsRange===7?'Total Done':'Days Achieved';
 var statsHtml='<div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:8px;margin-top:14px;">'
 +'<div style="background:white;border-radius:14px;padding:14px 8px;text-align:center;border:1.5px solid #ddeee9;"><div style="font-size:22px;font-weight:800;color:#e74c3c;line-height:1;">'+avgPct+'%</div><div style="font-size:10px;color:#aaa;font-weight:600;margin-top:4px;">'+statLbl1+'</div></div>'
 +'<div style="background:white;border-radius:14px;padding:14px 8px;text-align:center;border:1.5px solid #ddeee9;"><div style="font-size:22px;font-weight:800;color:#27ae60;line-height:1;">'+totalDone+'</div><div style="font-size:10px;color:#aaa;font-weight:600;margin-top:4px;">'+statLbl2+'</div></div>'
