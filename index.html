@@ -848,7 +848,7 @@ var cat=CATS[g.category];var weekDone=0;
 var dots=days.map(function(d){var done=completions[d]&&completions[d].indexOf(g.id)!==-1;if(done)weekDone++;return '<div style="width:26px;height:26px;border-radius:8px;flex-shrink:0;background:'+(done?cat.color:'#252d45')+';'+(done?'box-shadow:0 2px 5px '+cat.color+'44;':'')+'"></div>';}).join('');
 var starCol=weekDone===7?'#FFD700':'#e0e0e0';
 return '<div style="display:flex;align-items:center;padding:6px 0;border-bottom:1px solid #f7f7f2;">'
-+'<div style="flex:1;min-width:0;font-size:12px;font-weight:600;color:#333;display:flex;align-items:center;gap:5px;">'
++'<div style="flex:1;min-width:0;font-size:12px;font-weight:600;color:#ffffff;display:flex;align-items:center;gap:5px;">'
 +'<span style="flex-shrink:0;font-size:16px;">'+cat.icon+'</span>'
 +'<span style="white-space:nowrap;">'+shortGoalName(g.text)+'</span>'
 +'</div>'
